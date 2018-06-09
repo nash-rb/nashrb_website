@@ -1,0 +1,2 @@
+title: "Nash.rb Website - Entity Domain Model"
+exclude: "ActiveRecord::SchemaMigration,ActiveRecord::InternalMetadata"
