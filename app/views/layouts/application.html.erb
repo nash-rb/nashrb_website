@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NashrbWebsite</title>
+
+    <title>Nash.rb</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +13,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render(partial: "shared/header") %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

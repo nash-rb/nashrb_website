@@ -1,0 +1,12 @@
+h1 = t(".title")
+= form_for(session_create) do |f|
+  - if session_create.errors
+    - session_create.errors.full_messages.each do |error|
+      .alert.alert-danger role="alert"
+        = error
+  .form-group
+    = f.label(:email)
+    = f.text_field(:email, class: "form-control", required: true)
+    = f.label(:password)
+    = f.password_field(:password, class: "form-control", required: true)
+  = f.submit(t(".submit"), class: "btn btn-primary")

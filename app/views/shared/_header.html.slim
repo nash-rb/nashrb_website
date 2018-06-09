@@ -1,0 +1,12 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  = link_to(t("link.home"), root_path, class: "navbar-brand")
+  .collapse.navbar-collapse
+    ul.navbar-nav
+      - if signed_in?
+        li.nav-item
+          = link_to(t("link.sign_out"), sign_out_path, class: "nav-link")
+      - else
+        li.nav-item
+          = link_to(t("link.sign_in"), sign_in_path, class: "nav-link")
+        li.nav-item
+          = link_to(t("link.sign_up"), sign_up_path, class: "nav-link")

@@ -1,24 +1,28 @@
-# README
+# Nash.rb Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependencies
+- `ruby 2.4.4`
 
-Things you may want to cover:
+## First Run
 
-* Ruby version
+```sh
+bin/setup
+```
 
-* System dependencies
+## After pulling in fresh changes
+```sh
+bin/update
+```
 
-* Configuration
+## To run tests
+```sh
+rake # default rake task is the tests
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## To generate the Entity Relationship Diagram
+```sh
+rake db:migrate
+# or
+bundle exec erd
+```
+This generated an `erd.pdf` file which is not checked in since it is so large.
