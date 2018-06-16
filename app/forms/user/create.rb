@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class User < Hanami::Entity
   class Create
     include ActiveModel::Model
 
@@ -20,14 +20,14 @@ class User < ApplicationRecord
 
       create_user(session)
 
-      user.persisted?
+      user.present?
     end
 
   private
 
     def create_user(session)
       @user =
-        Users.create(
+        UserRepository.new.sign_up(
           session: session,
           email: email,
           password: password,

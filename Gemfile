@@ -28,6 +28,8 @@ gem "jbuilder", "~> 2.5"
 gem "bcrypt", "~> 3.1.7"
 gem "activerecord-session_store"
 
+gem "hanami-model"
+
 # Use ActiveStorage variant
 # gem "mini_magick", "~> 4.8"
 
@@ -50,6 +52,7 @@ group :development do
   gem "web-console", ">= 3.3.0"
   gem "ramsey_cop"
   gem "rails-erd"
+  gem "pry"
 end
 
 group :test do

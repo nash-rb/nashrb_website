@@ -1,12 +1,6 @@
-class User < ApplicationRecord
-  has_secure_password
-
-  def mark_as_authenticated
-    @authenticated = true
-  end
-
+class User < Hanami::Entity
   def authenticated?
-    @authenticated
+    false
   end
 
   Guest = Naught.build do |config|
