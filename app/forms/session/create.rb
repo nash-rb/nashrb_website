@@ -22,15 +22,19 @@ module Session
   private
 
     def ensure_email_exists
-      return if Users.email_exists?(email)
+      return if user_repository.email_exists?(email)
 
       errors.add(:base, :invalid_credentials)
     end
 
     def authenticate_user(session)
-      @user = Users.authenticate(session: session, email: email, password: password)
+      @user = user_repository.authenticate(session: session, email: email, password: password)
 
       errors.add(:base, :invalid_credentials) unless user&.authenticated?
+    end
+
+    def user_repository
+      @user_repository ||= UserRepository.new
     end
   end
 end

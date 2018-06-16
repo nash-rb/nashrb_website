@@ -13,7 +13,7 @@ module Authenticated
   end
 
   def current_user
-    Users.from_session(session)
+    user_repository.from_session(session)
   end
 
   def signed_in?
@@ -24,5 +24,11 @@ module Authenticated
     return if signed_in?
 
     redirect_to sign_in_path
+  end
+
+private
+
+  def user_repository
+    @user_repository ||= UserRepository.new
   end
 end
