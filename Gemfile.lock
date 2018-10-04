@@ -311,7 +311,7 @@ DEPENDENCIES
   naught
   pry
   puma (~> 3.11)
-  rails (~> 5.2.0)
+  rails (~> 5.2.1)
   rails-erd
   ramsey_cop
   sass-rails (~> 5.0)
